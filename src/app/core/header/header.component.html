@@ -1,0 +1,52 @@
+
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark mdb-color darken-2">
+
+  <!-- Navbar brand -->
+  <logo><a class="navbar-brand" [routerLink]="'/'"><em style="font-family: 'Comic Sans MS';" >RestMe!</em></a></logo>
+
+  <!-- Collapsible content -->
+  <links>
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link waves-light" [routerLink]="'/home'" mdbRippleRadius>Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbRippleRadius>Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbRippleRadius>Pricing</a>
+      </li>
+
+      <!-- Dropdown -->
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle mdbRippleRadius type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius>
+          Basic dropdown<span class="caret"></span></a>
+        <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+          <a class="dropdown-item waves-light" mdbRippleRadius href="#">Action</a>
+          <a class="dropdown-item waves-light" mdbRippleRadius href="#">Another action</a>
+          <a class="dropdown-item waves-light" mdbRippleRadius href="#">Something else here</a>
+          <div class="divider dropdown-divider"></div>
+          <a class="dropdown-item waves-light" mdbRippleRadius href="#">Separated link</a>
+        </div>
+      </li>
+    </ul>
+    <!-- Links -->
+
+    <!-- Links -->
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link waves-light" [routerLink]="'/logIn'" mdbRippleRadius>LogIn</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link waves-light" [routerLink]="'/signUp'" mdbRippleRadius>SignUp</a>
+      </li>
+    </ul>
+    <!-- Links -->
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->

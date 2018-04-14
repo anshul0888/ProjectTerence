@@ -1,0 +1,66 @@
+<div class="route-page">
+
+  <div class="container-fluid amber lighten-2" style="max-height: 30vh; padding: 20px;">
+
+    <form [formGroup]="searchData">
+
+      <div class="row form-inline">
+        <div class="col-sm-10">
+          <div class="md-form">
+            <input type="text" style="width: 100%;" class="form-control" data-error="Empty!" id="search" mdbActive mdbInputValidate>
+            <label for="search">Search (e.g. Delhi)</label>
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <button type="button" class="btn btn-info waves-light" mdbRippleRadius>Search</button>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="row">
+        <div class="col-sm-4">
+
+          <div class="row form-inline">
+            <div class="col-sm-3">
+              <label for="checkIn"><strong style="">Check In</strong></label>
+            </div>
+            <div class="col-sm-9">
+              <input type="date" id="checkIn" class="form-control">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-sm-4">
+
+          <div class="row form-inline">
+            <div class="col-sm-3">
+              <label for="checkOut"><strong style="">Check Out</strong></label>
+            </div>
+            <div class="col-sm-9">
+              <input type="date" id="checkOut" class="form-control" mdbInputValidate>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-sm-4">
+
+         <div class="md-form">
+           <input type="number" id="person" min="1" class="form-control" mdbActive mdbInputValidate>
+           <label for="person">Persons</label>
+         </div>
+
+        </div>
+
+      </div>
+
+
+    </form>
+
+  </div>
+
+
+
+</div>
