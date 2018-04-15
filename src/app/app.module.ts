@@ -8,8 +8,10 @@ import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { AdminModule } from './admin/admin.module';
 import { AppRoutingModule } from './app-routing.module';
+import { LocalStorageModule } from '@ngx-pwa/local-storage';
 
 import { AppComponent } from './app.component';
+import { HttpServiceService } from './http-service.service';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    LocalStorageModule,
     CoreModule,
     AuthModule,
     UserModule,
@@ -26,7 +29,9 @@ import { AppComponent } from './app.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    HttpServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

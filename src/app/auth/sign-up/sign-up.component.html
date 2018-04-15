@@ -7,41 +7,52 @@
           <p class="h5 mb-4" style="color: #9e9e9e; border: 2px solid #9e9e9e; border-radius: 8px; padding: 12px 20px; font-size: 30px; font-family: 'Comic Sans MS'"><em>Sign Up</em></p>
         </div>
 
-        <div class="row">
-          <div class="col-sm-6 offset-sm-3">
+        <div class="row" style="margin-top: 5vh;">
+
+          <div class="col-sm-6">
 
             <div class="md-form">
-              <input type="text" formControlName="username" id="name" class="form-control" style="color: #fff;" mdbActive mdbInputValidate>
-              <label for="name">Full Name</label>
+              <input type="text" formControlName="fullName" id="fullName" class="form-control" style="color: #fff;" mdbActive mdbInputValidate>
+              <label for="fullName">Full Name</label>
             </div>
 
             <br>
 
             <div class="md-form">
-              <input type="text" formControlName="username" id="phone" maxlength="10" minLength="10" class="form-control" style="color: #fff;" mdbCharCounter mdbActive mdbInputValidate>
+              <input type="text" formControlName="userName" id="userName" class="form-control" style="color: #fff;" mdbActive mdbInputValidate>
+              <label for="userName">User Name</label>
+            </div>
+
+            <br>
+
+            <div class="md-form">
+              <input type="text" formControlName="phone" id="phone" maxlength="10" minLength="10" class="form-control" style="color: #fff;" mdbCharCounter mdbActive mdbInputValidate>
               <label for="phone">Phone</label>
             </div>
 
-            <br>
+          </div>
+
+
+          <div class="col-sm-6">
 
             <div class="md-form">
-              <input type="email" formControlName="username" id="username" class="form-control" style="color: #fff;" mdbActive mdbInputValidate>
-              <label for="username">Email</label>
+              <input type="email" formControlName="email" id="email" class="form-control" style="color: #fff;" mdbActive mdbInputValidate>
+              <label for="email">Email</label>
             </div>
 
             <br>
 
             <div class="md-form">
-              <input type="text" formControlName="password" id="password" autocomplete="off" class="form-control password" style="color: #fff;" mdbActive mdbInputValidate>
-              <label for="password">Password</label>
+              <input type="text" formControlName="passEnter" id="passEnter" autocomplete="off" class="form-control password" style="color: #fff;" mdbActive mdbInputValidate>
+              <label for="passEnter">Password</label>
             </div>
 
             <br>
 
             <div class="md-form">
-              <input type="text" formControlName="confirmPassword" [ngClass]="{
-              'counter-success': confirmpass, 'counter-danger': confirmfail}" id="confirmPassword" autocomplete="off" class="form-control password" style="color: #fff;" mdbActive mdbInputValidate (input)="onConfirmPassword()">
-              <label for="confirmPassword">Confirm Password</label>
+              <input type="text" formControlName="passConfirm" [ngClass]="{
+              'counter-success': confirmpass, 'counter-danger': confirmfail}" id="passConfirm" autocomplete="off" class="form-control password" style="color: #fff;" mdbActive mdbInputValidate (input)="onConfirmPassword()">
+              <label for="passConfirm">Confirm Password</label>
             </div>
 
           </div>
@@ -52,7 +63,7 @@
 
     <div style="padding-top: 30px;">
       <div class="text-center">
-        <button class="btn btn-primary waves-light" type="submit" mdbRippleRadius>SignUp</button>
+        <button class="btn btn-primary waves-light" type="submit" mdbRippleRadius [disabled]="signInLoading">{{signInButtonLabel}}</button>
         or <a class="text-primary" [routerLink]="'/logIn'"> Already have an account, LogIn? </a>
       </div>
     </div>

@@ -8,6 +8,81 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
   searchData: FormGroup;
+  info = [
+    {
+      hotelName: 'Haven Inn',
+      address: 'Shimla',
+      fascilities: ['Free Wifi', 'Spa', 'Parking', 'A/C', 'Restaurant', 'Hotel Bar', 'Gym'],
+      price: 5000,
+      images: [],
+      reviews: {
+        location: 8.9,
+        rooms: 8.5,
+        service: 9,
+        cleanliness: 8,
+        valueForMoney: 7,
+        comfort: 8,
+        facilities: 6,
+        building: 8,
+        food: 9
+      },
+      description: 'Live the high life, quite literally, in the sublime Hotel Marina in the foothills of the Himalayas. Set in an acre of luscious greenery off the famous Mall of Shimla, this boutique hotel, a favourite with Bollywood stars, offers stunning views of the surrounding valley.'
+    },{
+      hotelName: 'Haven Inn',
+      address: 'Shimla',
+      fascilities: ['Free Wifi', 'Spa', 'Parking', 'A/C', 'Restaurant', 'Hotel Bar', 'Gym'],
+      price: 5000,
+      images: [],
+      reviews: {
+        location: 8.9,
+        rooms: 8.5,
+        service: 9,
+        cleanliness: 8,
+        valueForMoney: 7,
+        comfort: 8,
+        facilities: 6,
+        building: 8,
+        food: 9
+      },
+      description: 'Live the high life, quite literally, in the sublime Hotel Marina in the foothills of the Himalayas. Set in an acre of luscious greenery off the famous Mall of Shimla, this boutique hotel, a favourite with Bollywood stars, offers stunning views of the surrounding valley.'
+    },{
+      hotelName: 'Haven Inn',
+      address: 'Shimla',
+      fascilities: ['Free Wifi', 'Spa', 'Parking', 'A/C', 'Restaurant', 'Hotel Bar', 'Gym'],
+      price: 5000,
+      images: [],
+      reviews: {
+        location: 8.9,
+        rooms: 8.5,
+        service: 9,
+        cleanliness: 8,
+        valueForMoney: 7,
+        comfort: 8,
+        facilities: 6,
+        building: 8,
+        food: 9
+      },
+      description: 'Live the high life, quite literally, in the sublime Hotel Marina in the foothills of the Himalayas. Set in an acre of luscious greenery off the famous Mall of Shimla, this boutique hotel, a favourite with Bollywood stars, offers stunning views of the surrounding valley.'
+    },{
+      hotelName: 'Haven Inn',
+      address: 'Shimla',
+      fascilities: ['Free Wifi', 'Spa', 'Parking', 'A/C', 'Restaurant', 'Hotel Bar', 'Gym'],
+      price: 5000,
+      images: [],
+      reviews: {
+        location: 8.9,
+        rooms: 8.5,
+        service: 9,
+        cleanliness: 8,
+        valueForMoney: 7,
+        comfort: 8,
+        facilities: 6,
+        building: 8,
+        food: 9
+      },
+      description: 'Live the high life, quite literally, in the sublime Hotel Marina in the foothills of the Himalayas. Set in an acre of luscious greenery off the famous Mall of Shimla, this boutique hotel, a favourite with Bollywood stars, offers stunning views of the surrounding valley.'
+    }
+  ]
   constructor() { }
 
   ngOnInit() {

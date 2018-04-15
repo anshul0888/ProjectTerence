@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { HttpServiceService } from '../../http-service.service';
 
 @Component({
   selector: 'app-log-in',
@@ -9,16 +10,17 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class LogInComponent implements OnInit {
   loginFormData: FormGroup;
 
-  constructor() { }
+  constructor(private httpService: HttpServiceService) { }
 
   ngOnInit() {
     this.loginFormData = new FormGroup({
-      'username': new FormControl(null, [Validators.email]),
-      'password': new FormControl(null, [Validators.required])
+      'username': new FormControl(null),
+      'password': new FormControl(null)
     });
   }
 
   onLogIn() {
-    console.log(this.loginFormData);
+    console.log(this.loginFormData.value);
+    this.httpService.logIn(this.loginFormData.value);
   }
 }

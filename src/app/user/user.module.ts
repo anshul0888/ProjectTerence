@@ -6,6 +6,7 @@ import { UserRoutingModule } from './user-routing.module';
 import { HomeComponent } from './home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from '../core/core.module';
+import { HotelComponent } from './home/hotel/hotel.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { CoreModule } from '../core/core.module';
     UserRoutingModule,
     CoreModule
   ],
-  declarations: [HomeComponent]
+  declarations: [HomeComponent, HotelComponent]
 })
 export class UserModule { }
