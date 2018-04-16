@@ -1,12 +1,12 @@
 <div class="container">
 
-  <div (click)="desc.toggle()" class="row hm-zoom view hoverable" style="padding: 15px;">
+  <div class="row hm-zoom view hoverable" style="padding: 15px;">
 
-    <div class="col-sm-3">
+    <div class="col-sm-3" (click)="desc.toggle()">
       <img [src]="hotelData.images" style="width: 100%;height: 100%;" class="img-fluid" alt="{{hotelData.hotelName}}">
     </div>
 
-    <div class="col-sm-6">
+    <div class="col-sm-6"(click)="desc.toggle()">
       <h3>{{hotelData.hotelName}}</h3>
       <hr class="grey lighten-1">
       <h4>{{hotelData.address}}</h4>
@@ -25,6 +25,7 @@
 
     <div mdbCollapse="isCollapsed" #desc="bs-collapse">
       <hr>
+      <p class="pull-right" style="color: red;font-size: 18px; font-style: italic; font-weight: 600;" (click)="desc.toggle()">Close</p>
       <p><strong>Description</strong></p>
       <p>{{hotelData.description}}</p>
       <p><strong>Perks</strong></p>
