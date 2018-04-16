@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpServiceService } from '../../http-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-log-in',
@@ -9,8 +10,9 @@ import { HttpServiceService } from '../../http-service.service';
 })
 export class LogInComponent implements OnInit {
   loginFormData: FormGroup;
+  loggedIn = false;
 
-  constructor(private httpService: HttpServiceService) { }
+  constructor(private httpService: HttpServiceService, private router: Router) { }
 
   ngOnInit() {
     this.loginFormData = new FormGroup({
@@ -20,7 +22,16 @@ export class LogInComponent implements OnInit {
   }
 
   onLogIn() {
+
+    // setTimeout(() => {
+    //   this.httpService.isLoggedIn = true;
+    //   this.httpService.userLogged.next(this.loggedIn);
+    //   this.router.navigate(['home']);
+    // }, 1000);
     console.log(this.loginFormData.value);
-    this.httpService.logIn(this.loginFormData.value);
+    this.httpService.logIn('test', 'test');
+    this.httpService.check().subscribe(
+      (response) => console.log(response)
+    );
   }
 }

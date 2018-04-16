@@ -1,9 +1,9 @@
 <div class="container">
 
-  <div (click)="desc.toggle()" class="row view hoverable" style="padding: 15px;">
+  <div (click)="desc.toggle()" class="row hm-zoom view hoverable" style="padding: 15px;">
 
     <div class="col-sm-3">
-      <img src="https://imgio.trivago.com/uploadimages/16/08/16088718_x.jpeg" style="width: 100%;height: 100%;" class="img-fluid" alt="">
+      <img [src]="hotelData.images" style="width: 100%;height: 100%;" class="img-fluid" alt="{{hotelData.hotelName}}">
     </div>
 
     <div class="col-sm-6">

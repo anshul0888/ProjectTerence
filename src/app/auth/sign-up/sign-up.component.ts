@@ -30,10 +30,17 @@ export class SignUpComponent implements OnInit {
   }
 
   onSignUp() {
-    console.log(this.signUpFormData);
+    console.log(this.signUpFormData.value);
     this.signInLoading = true;
     this.signInButtonLabel = 'Loading';
-    this.httpService.logIn(this.signUpFormData.value);
+    this.httpService.signUp(this.signUpFormData.value).subscribe(
+      (signUpResponse) => {
+        signUpResponse = JSON.parse(JSON.stringify(signUpResponse));
+        console.log(signUpResponse);
+        this.signInLoading = false;
+        this.signInButtonLabel = 'Loading';
+      }
+    );
   }
 
   onConfirmPassword() {

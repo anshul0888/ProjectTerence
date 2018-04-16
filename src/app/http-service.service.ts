@@ -10,22 +10,17 @@ export class HttpServiceService {
 
   userLogged = new Subject();
 
+  isLoggedIn = false;
+
   constructor(private httpClient: HttpClient, protected localStorage: LocalStorage) { }
 
   signUp(signUpData) {
-    this.httpClient.post(apiUrl + 'auth/register', signUpData).subscribe(
-      (response) => {
-        console.log(response);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+    return this.httpClient.post(apiUrl + 'auth/signup', signUpData);
   }
 
-  logIn(loginData) {
-    console.log(apiUrl + 'auth/login');
-    this.httpClient.post('https://railway-restrooms.herokuapp.com/auth/login', loginData).subscribe(
+  logIn(loginData, test) {
+    console.log(apiUrl + 'auth/signin');
+    this.httpClient.post('https://railway-restrooms.herokuapp.com/auth/signin', loginData, test).subscribe(
       (loginResponse) => {
         console.log(loginResponse);
       },
@@ -53,5 +48,14 @@ export class HttpServiceService {
 
   deleteToken() {
     return this.localStorage.clear();
+  }
+
+  check() {
+    return this.httpClient.get(apiUrl);
+  }
+
+  checkIsLoggedIn() {
+    console.log(this.isLoggedIn);
+    return this.isLoggedIn;
   }
 }
